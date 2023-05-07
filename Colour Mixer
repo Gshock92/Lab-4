@@ -1,0 +1,36 @@
+#include "mbed.h"
+ 
+ AnalogIn mypotentiometer1 (p19); // reads potentiometer1 value
+ AnalogIn mypotentiometer2 (p20); // reads potentiometer2 value
+ 
+ PwmOut red(p24); // initilizes red led
+ PwmOut green(p25); // initilizes green led
+ 
+ float p1, p2; // creates float for both potentiometer values
+ 
+ BufferedSerial pc(USBTX, USBRX); // initilizes output to Tera Term
+ 
+ int main()
+ {
+     while(1) {
+         p1 = mypotentiometer1 * 100;  // converts signal to value between 0 and 1
+         p2 = mypotentiometer2 * 100;  // converts signal to value between 0 and 1
+                 {
+                   red = mypotentiometer1; // assigns red led to potentiometer1
+                    green = mypotentiometer2;  // assigns green led to potentiometer2
+                    
+                }             
+        wait_us(5000);  // time in secs mbed checks potentiometer values     
+
+    }
+ }
+         p2 = mypotentiometer2 * 100;  // converts signal to value between 0 and 1
+                 {
+                   red = mypotentiometer1; // assigns red led to potentiometer1
+                    green = mypotentiometer2;  // assigns green led to potentiometer2
+                    
+                }             
+        wait_us(5000);  // time in secs mbed checks potentiometer values     
+
+    }
+ }
